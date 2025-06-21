@@ -2,4 +2,5 @@ jdk:
   - openjdk8
 
 install:
-  - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - cd ome-sdk && mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - cd ../orms-sdk && mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
