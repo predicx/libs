@@ -5,13 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <groupId>com.predicx</groupId>
+        <artifactId>libs</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     
     <groupId>com.predicx.ome</groupId>
-    <version>${revision}</version>
+    <name>OME SDK</name>
 
     <artifactId>ome-sdk</artifactId>
     <packaging>jar</packaging>

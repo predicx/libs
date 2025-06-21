@@ -2,5 +2,10 @@ jdk:
   - openjdk8
 
 install:
-  - cd ome-sdk && mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  - cd ../orms-sdk && mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn -N clean install
+  - mvn -pl :ome-sdk -am clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn -pl :orms-sdk -am clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+# This configuration:
+# 1. First installs the parent POM
+# 2. Then builds each module separately with its own coordinates
