@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.${env.GITHUB_ACTOR}</groupId>
+    <artifactId>libs</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+
+    <name>Predicx Libraries</name>
+    <description>Collection of Predicx Java libraries</description>
+    <url>https://github.com/yourusername/your-repo</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <modules>
+        <module>ome-sdk</module>
+        <module>orms-sdk</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>install-jars</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-install-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-ome-sdk</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>install-file</goal>
+                                </goals>
+                                <configuration>
+                                    <file>${basedir}/ome-sdk-0.0.1.jar</file>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>ome-sdk</artifactId>
+                                    <version>${project.version}</version>
+                                    <packaging>jar</packaging>
+                                    <generatePom>true</generatePom>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>install-orms-sdk</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>install-file</goal>
+                                </goals>
+                                <configuration>
+                                    <file>${basedir}/orms-sdk-0.0.1.jar</file>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>orms-sdk</artifactId>
+                                    <version>${project.version}</version>
+                                    <packaging>jar</packaging>
+                                    <generatePom>true</generatePom>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
