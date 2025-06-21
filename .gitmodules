@@ -1,0 +1,9 @@
+[submodule "ome-sdk"]
+    path = ome-sdk
+    url = https://github.com/predicx/libs.git
+    branch = main
+
+[submodule "orms-sdk"]
+    path = orms-sdk
+    url = https://github.com/predicx/libs.git
+    branch = main
