@@ -12,11 +12,8 @@
     </parent>
     
     <groupId>com.predicx.ome</groupId>
-    <name>OME SDK</name>
-
     <artifactId>ome-sdk</artifactId>
     <packaging>jar</packaging>
-
     <name>OME SDK</name>
     <description>Java SDK for OME</description>
 

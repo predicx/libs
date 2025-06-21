@@ -12,11 +12,8 @@
     </parent>
     
     <groupId>com.predicx.orms</groupId>
-    <name>ORMS SDK</name>
-
     <artifactId>orms-sdk</artifactId>
     <packaging>jar</packaging>
-
     <name>ORMS SDK</name>
     <description>Java SDK for ORMS</description>
 
