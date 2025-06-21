@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.${env.GITHUB_ACTOR}</groupId>
+    <groupId>com.predicx</groupId>
     <artifactId>libs</artifactId>
-    <version>0.0.1</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <name>Predicx Libraries</name>
@@ -17,6 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <revision>0.0.1</revision> <!-- Default version, will be overridden by Git tag -->
     </properties>
 
     <modules>
@@ -52,8 +53,8 @@
                                     <goal>install-file</goal>
                                 </goals>
                                 <configuration>
-                                    <file>${basedir}/ome-sdk-0.0.1.jar</file>
-                                    <groupId>${project.groupId}</groupId>
+                                    <file>${basedir}/ome-sdk.jar</file>
+                                    <groupId>com.predicx.ome</groupId>
                                     <artifactId>ome-sdk</artifactId>
                                     <version>${project.version}</version>
                                     <packaging>jar</packaging>
@@ -67,8 +68,8 @@
                                     <goal>install-file</goal>
                                 </goals>
                                 <configuration>
-                                    <file>${basedir}/orms-sdk-0.0.1.jar</file>
-                                    <groupId>${project.groupId}</groupId>
+                                    <file>${basedir}/orms-sdk.jar</file>
+                                    <groupId>com.predicx.orms</groupId>
                                     <artifactId>orms-sdk</artifactId>
                                     <version>${project.version}</version>
                                     <packaging>jar</packaging>
